@@ -21,20 +21,6 @@ public class Account {
             3. пробел стоит не в начале строки
             4. пробел стоит не в конце строки.
          */
-
-        if (name == null) {
-            return false;
-        }
-        if (name.startsWith(" ") || name.endsWith(" ")) {
-            return false;
-        }
-        if (name.length() - 1 != name.replace(" ", "").length()) {
-            return false;
-        }
-
-        if (name.length() < minNameLength || name.length() > maxNameLength) {
-            return false;
-        }
-        return true;
+        return name != null && name.matches("^(?=.{3,19}$)\\S+ \\S+");
     }
 }

@@ -22,7 +22,6 @@ public class AccountTest {
     public void checkNameToEmbossMaxLengthTrue() {
         name = String.format("%s %s", createRandomAccountNameAllowedString(maxNameLength - (maxNameLength - 1))
                 , createRandomAccountNameAllowedString(maxNameLength - 2));
-        System.out.println(name);
         account = new Account(name);
         assertTrue("Ожидалось, что функция вернет true при использовании name с максимально допустимой длинной"
                 , account.checkNameToEmboss());
