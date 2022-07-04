@@ -21,6 +21,6 @@ public class Account {
             3. пробел стоит не в начале строки
             4. пробел стоит не в конце строки.
          */
-        return name != null && name.matches("^(?=.{3,19}$)\\S+ \\S+");
+        return name != null && name.matches(String.format("^(?=.{%s,%s}$)\\S+ \\S+", minNameLength, maxNameLength));
     }
 }
