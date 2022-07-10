@@ -19,8 +19,8 @@ public class AccountTest {
 
     @Parameterized.Parameters(name = " account.name = \"{0}\" | expected result is \"{1}\"")
     public static Object[][] getNameData() {
-        int minNameLength = Account.minNameLength;
-        int maxNameLength = Account.maxNameLength;
+        int minNameLength = Account.MIN_NAME_LENGTH;
+        int maxNameLength = Account.MAX_NAME_LENGTH;
         return new Object[][]{
                 {String.format("%s %s", createRandomAccountNameAllowedString(minNameLength - (minNameLength - 1))
                         , createRandomAccountNameAllowedString(minNameLength - 2))
@@ -63,7 +63,7 @@ public class AccountTest {
 
     @Test
     public void checkNameToEmbossTest() {
-        Account account = new Account(name);
+        var account = new Account(name);
         assertEquals(errorMessage, expectedResult, account.checkNameToEmboss());
     }
 

@@ -3,9 +3,9 @@ public class Account {
 
     private final String name;
 
-    public static final int minNameLength = 3;
+    public static final int MIN_NAME_LENGTH = 3;
 
-    public static final int maxNameLength = 19;
+    public static final int MAX_NAME_LENGTH = 19;
 
     public Account(String name) {
         this.name = name;
@@ -21,6 +21,6 @@ public class Account {
             3. пробел стоит не в начале строки
             4. пробел стоит не в конце строки.
          */
-        return name != null && name.matches(String.format("^(?=.{%s,%s}$)\\S+ \\S+", minNameLength, maxNameLength));
+        return name != null && name.matches(String.format("^(?=.{%s,%s}$)\\S+ \\S+", MIN_NAME_LENGTH, MAX_NAME_LENGTH));
     }
 }
